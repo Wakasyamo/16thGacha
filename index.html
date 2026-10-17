@@ -549,7 +549,7 @@ function drawSingleGacha() {
 function drawGacha10() {
   if (isGachaRunning) return;
   updateLimitState();
-  if (gachaState.count < 1) {
+  if (gachaState.count < 9) {
     alert('回数が不足しています。回復をお待ちください！');
     return;
   }
@@ -561,7 +561,7 @@ function drawGacha10() {
     gachaState.lastTime = Date.now();
   }
   gachaState.count -= 10;
-  gachaState.totalPulls += 10;
+  gachaState.totalPulls += 100;
   saveLimitState();
   updateLimitUI();
   updateTotalPullsUI();
